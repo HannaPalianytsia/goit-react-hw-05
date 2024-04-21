@@ -31,7 +31,9 @@ const MovieCast = () => {
     <div>
       {isLoading && <Loader />}
       {error && <ErrorMessage />}
-      {cast.length === 0 && <p>Sorry, there is no inforation about cast</p>}
+      {!isLoading && cast.length === 0 && (
+        <p>Sorry, there is no inforation about cast</p>
+      )}
       {cast.length > 0 && <MovieCastDetails cast={cast} />}
     </div>
   );

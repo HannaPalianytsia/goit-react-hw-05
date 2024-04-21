@@ -33,7 +33,7 @@ const MovieDetailsPage = () => {
   return (
     <div>
       <div>
-        <Link to={goBack.current.pathname}>
+        <Link to={goBack.current}>
           <button>Go back</button>
         </Link>
         {isLoading && <Loader />}

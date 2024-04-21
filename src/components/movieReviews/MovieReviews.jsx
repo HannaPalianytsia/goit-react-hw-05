@@ -31,7 +31,9 @@ const MovieReviews = () => {
     <div>
       {isLoading && <Loader />}
       {error && <ErrorMessage />}
-      {reviews.length === 0 && <p>We don`t have any reviews for this movie</p>}
+      {!isLoading && reviews.length === 0 && (
+        <p>We don`t have any reviews for this movie</p>
+      )}
       {reviews.length > 0 && <MovieReviewsDetails reviews={reviews} />}
     </div>
   );

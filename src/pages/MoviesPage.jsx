@@ -4,12 +4,15 @@ import Loader from "../components/loader/Loader";
 import ErrorMessage from "../components/errorMessage/ErrorMessage";
 import MovieList from "../components/movieList/MovieList";
 import SearchBar from "../components/searchBar/SearchBar";
+import { useSearchParams } from "react-router-dom";
 
 const MoviesPage = () => {
-  const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  const [searchParams, setSearchParams] = useSearchParams();
+  const query = searchParams.get("query");
 
   useEffect(() => {
     if (!query) return;
@@ -28,9 +31,9 @@ const MoviesPage = () => {
   }, [query]);
 
   const handleSubmit = (inputValue) => {
-    setQuery(inputValue);
     setMovies([]);
     setError(null);
+    setSearchParams({ query: inputValue });
   };
 
   return (
