@@ -1,9 +1,11 @@
+import styles from "./MovieReviewsDetails.module.css";
+
 const MovieReviewsDetails = ({ reviews }) => {
   return (
-    <ul>
+    <ul className={styles.reviewsList}>
       {reviews.map(({ id, author, content }) => (
-        <li key={id}>
-          <p>Author: {author}</p>
+        <li key={id} className={styles.reviewsItem}>
+          <p>AUTHOR: {author}</p>
           <p>{content}</p>
         </li>
       ))}

@@ -1,0 +1,15 @@
+.castList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 16px;
+}
+.castItem {
+  width: calc((100% - 7 * 8px - 16px) / 8);
+  border: 1px solid #422d53;
+
+  height: fit-content;
+}
+.castItem > p {
+  margin: 8px;
+}

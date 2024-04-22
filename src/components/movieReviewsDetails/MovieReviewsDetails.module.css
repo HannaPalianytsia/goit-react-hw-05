@@ -1,0 +1,16 @@
+.reviewsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 16px;
+}
+.reviewsItem {
+  padding: 8px;
+  width: 100%;
+  background-color: #523a64;
+  border-radius: 8px;
+  height: fit-content;
+}
+.reviewsItem > p {
+  margin: 8px;
+}

@@ -1,15 +1,27 @@
 import { NavLink } from "react-router-dom";
+import clsx from "clsx";
+import styles from "./Header.module.css";
+import { BiSolidMoviePlay } from "react-icons/bi";
 
 const Header = () => {
+  const buildLinkClass = ({ isActive }) => {
+    return clsx(styles.navItem, isActive && styles.active);
+  };
+
   return (
-    <header>
-      <nav>
-        <ul>
+    <header className={styles.header}>
+      <nav className={styles.navigation}>
+        <BiSolidMoviePlay size={30} className={styles.navIcon} />
+        <ul className={styles.navList}>
           <li>
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/" className={buildLinkClass}>
+              Home
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/movies">Movies</NavLink>
+            <NavLink to="/movies" className={buildLinkClass}>
+              Movies
+            </NavLink>
           </li>
         </ul>
       </nav>

@@ -1,0 +1,32 @@
+.movieList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 16px;
+}
+
+.movieItem {
+  width: calc((100% - 4 * 16px - 10px) / 5);
+  border: 1px solid #422d53;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: fit-content;
+  background-color: #523a64;
+}
+
+.movieItem:hover,
+.movieItem:focus {
+  transform: scale(1.04);
+  border-color: #d75c78;
+  background-color: #d75c78;
+}
+
+.movieTitle {
+  width: fit-content;
+  font-size: large;
+  margin: auto;
+}
+.movieTitleContainer {
+  padding: 4px;
+}

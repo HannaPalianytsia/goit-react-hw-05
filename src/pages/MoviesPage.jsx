@@ -10,6 +10,7 @@ const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [isEmpty, setIsEmpty] = useState(false);
 
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get("query");
@@ -20,6 +21,11 @@ const MoviesPage = () => {
       setIsLoading(true);
       try {
         const data = await searchMovies(query);
+        if (!data.length) {
+          setIsEmpty(true);
+          return;
+        }
+        setIsEmpty(false);
         setMovies(data);
       } catch (error) {
         setError(error);
@@ -33,6 +39,7 @@ const MoviesPage = () => {
   const handleSubmit = (inputValue) => {
     setMovies([]);
     setError(null);
+    setIsEmpty(false);
     setSearchParams({ query: inputValue });
   };
 
@@ -41,6 +48,12 @@ const MoviesPage = () => {
       <SearchBar onSubmit={handleSubmit} />
       {isLoading && <Loader />}
       {error && <ErrorMessage />}
+      {isEmpty && !isLoading && (
+        <p style={{ padding: 40, fontSize: 20 }}>
+          Sorry, there are no movies matching your search query. Please try
+          again!
+        </p>
+      )}
       {movies.length > 0 && <MovieList movies={movies} />}
     </div>
   );

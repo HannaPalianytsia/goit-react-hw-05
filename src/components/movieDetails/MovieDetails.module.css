@@ -1,0 +1,28 @@
+.movie {
+  padding: 20px;
+  display: flex;
+  gap: 12px;
+}
+
+.movie > img {
+  max-width: 300px;
+}
+.movieInfo {
+  padding: 12px;
+}
+.movieInfo > p {
+  margin-bottom: 28px;
+}
+.addInfo {
+  border-top: 1px solid #f2f2f2;
+  border-bottom: 1px solid #f2f2f2;
+  padding: 12px;
+}
+.addInfoTitle,
+.addInfoItem {
+  padding: 4px;
+}
+.addInfoItem:hover,
+.addInfoItem:focus {
+  color: #d75c78;
+}

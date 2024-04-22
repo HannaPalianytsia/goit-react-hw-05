@@ -1,10 +1,11 @@
 import movieImage from "../img/movie_image.jpg";
+import styles from "./MovieCastDetails.module.css";
 
 const MovieCastDetails = ({ cast }) => {
   return (
-    <ul>
+    <ul className={styles.castList}>
       {cast.map(({ id, character, name, profile_path }) => (
-        <li key={id}>
+        <li key={id} className={styles.castItem}>
           {profile_path !== null ? (
             <img
               src={`https://image.tmdb.org/t/p/w500/${profile_path}`}

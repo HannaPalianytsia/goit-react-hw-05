@@ -26,7 +26,7 @@ const HomePage = () => {
 
   return (
     <>
-      <h2>Trending movies today</h2>
+      <h2 style={{ padding: 20 }}>Trending movies today</h2>
       {isLoading && <Loader />}
       {error && <ErrorMessage />}
       {movies.length > 0 && <MovieList movies={movies} />}

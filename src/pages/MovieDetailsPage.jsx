@@ -4,6 +4,7 @@ import { getMovie } from "../apiService/movies";
 import Loader from "../components/loader/Loader";
 import ErrorMessage from "../components/errorMessage/ErrorMessage";
 import MovieDetails from "../components/movieDetails/MovieDetails";
+import { IoChevronBackCircle } from "react-icons/io5";
 
 const MovieDetailsPage = () => {
   const [movie, setMovie] = useState(null);
@@ -34,7 +35,10 @@ const MovieDetailsPage = () => {
     <div>
       <div>
         <Link to={goBack.current}>
-          <button>Go back</button>
+          <button>
+            <IoChevronBackCircle size={20} />
+            GO BACK
+          </button>
         </Link>
         {isLoading && <Loader />}
         {error && <ErrorMessage />}
