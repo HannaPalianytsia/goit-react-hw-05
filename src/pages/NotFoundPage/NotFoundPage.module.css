@@ -1,0 +1,19 @@
+.notFound,
+.goHome {
+  width: fit-content;
+  font-size: large;
+}
+.notFound {
+  padding-bottom: 16px;
+}
+
+.goHome {
+  border: 1px solid #f2f2f2;
+  padding: 8px;
+}
+
+.notFoundPage {
+  width: fit-content;
+  margin: 0 auto;
+  padding: 20px;
+}

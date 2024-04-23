@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { searchMovies } from "../apiService/movies";
-import Loader from "../components/loader/Loader";
-import ErrorMessage from "../components/errorMessage/ErrorMessage";
-import MovieList from "../components/movieList/MovieList";
-import SearchBar from "../components/searchBar/SearchBar";
+import { searchMovies } from "../../apiService/movies";
+import Loader from "../../components/loader/Loader";
+import ErrorMessage from "../../components/errorMessage/ErrorMessage";
+import MovieList from "../../components/movieList/MovieList";
+import SearchBar from "../../components/searchBar/SearchBar";
 import { useSearchParams } from "react-router-dom";
 
 const MoviesPage = () => {

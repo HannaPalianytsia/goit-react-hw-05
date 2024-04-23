@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom";
 import clsx from "clsx";
-import styles from "./Header.module.css";
+import styles from "./Navigation.module.css";
 import { BiSolidMoviePlay } from "react-icons/bi";
 
-const Header = () => {
+const Navigation = () => {
   const buildLinkClass = ({ isActive }) => {
     return clsx(styles.navItem, isActive && styles.active);
   };
@@ -29,4 +29,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Navigation;

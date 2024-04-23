@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, Outlet, useLocation, useParams } from "react-router-dom";
-import { getMovie } from "../apiService/movies";
-import Loader from "../components/loader/Loader";
-import ErrorMessage from "../components/errorMessage/ErrorMessage";
-import MovieDetails from "../components/movieDetails/MovieDetails";
+import { getMovie } from "../../apiService/movies";
+import Loader from "../../components/loader/Loader";
+import ErrorMessage from "../../components/errorMessage/ErrorMessage";
+import MovieDetails from "../../components/movieDetails/MovieDetails";
 import { IoChevronBackCircle } from "react-icons/io5";
 
 const MovieDetailsPage = () => {
@@ -14,7 +14,7 @@ const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const location = useLocation();
 
-  const goBack = useRef(location?.state ?? "/");
+  const goBack = useRef(location?.state ?? "/movies");
 
   useEffect(() => {
     const fetchData = async () => {
